@@ -60,8 +60,9 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker-compose up --build -d
+            sudo docker-compose stop
+            sudo docker-compose rm web
+            sudo docker-compose up -d
 
   send_message:
     runs-on: ubuntu-latest
