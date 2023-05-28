@@ -33,6 +33,3 @@ services:
       - "80:80"
     depends_on:
       - web
-
-    depends_on:
-      - web
